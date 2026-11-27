@@ -1,0 +1,7 @@
+@tailwind base; @tailwind components; @tailwind utilities;
+:root { --font: 'Segoe UI', 'Noto Sans Arabic', 'Cairo', Tahoma, system-ui, sans-serif; }
+body { font-family: var(--font); }
+.card { @apply rounded-2xl border border-slate-200 bg-white/80 shadow-sm backdrop-blur dark:border-white/10 dark:bg-white/5; }
+.btn { @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition active:scale-95; }
+.chip { @apply btn border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 dark:border-white/10 dark:bg-white/5 dark:text-slate-200 dark:hover:bg-white/10; }
+.primary { @apply btn bg-gradient-to-l from-iris to-blue-500 text-white shadow-lg shadow-blue-500/20 hover:opacity-95 disabled:opacity-50; }
