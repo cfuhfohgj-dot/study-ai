@@ -1,0 +1,18 @@
+const P = { fill: 'none', stroke: 'currentColor', strokeWidth: 1.8, strokeLinecap: 'round', strokeLinejoin: 'round' };
+const I = (d, extra) => function Icon({ size = 20, className = '' }) { return <svg width={size} height={size} viewBox="0 0 24 24" className={className} {...P}>{d}{extra}</svg>; };
+export const Camera = I(<><path d="M4 8h3l2-3h6l2 3h3v11H4z" /><circle cx="12" cy="13" r="3.5" /></>);
+export const File = I(<><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" /><path d="M14 3v5h5" /></>);
+export const Mic = I(<><rect x="9" y="3" width="6" height="11" rx="3" /><path d="M5 11a7 7 0 0 0 14 0M12 18v3" /></>);
+export const Stop = I(<rect x="6" y="6" width="12" height="12" rx="2" />);
+export const Play = I(<path d="M7 5l12 7-12 7z" />);
+export const Pause = I(<><path d="M8 5v14M16 5v14" /></>);
+export const Download = I(<><path d="M12 4v11M7 11l5 5 5-5M5 20h14" /></>);
+export const Sun = I(<><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></>);
+export const Moon = I(<path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z" />);
+export const Book = I(<><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z" /><path d="M4 19V5" /></>);
+export const Send = I(<path d="M21 3L10 14M21 3l-7 18-4-7-7-4z" />);
+export const Spark = I(<path d="M12 3l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" />);
+export const Back = I(<path d="M15 5l-7 7 7 7" />);
+export const Close = I(<path d="M6 6l12 12M18 6L6 18" />);
+export const Check = I(<path d="M5 12l5 5 9-10" />);
+export const Plus = I(<path d="M12 5v14M5 12h14" />);
