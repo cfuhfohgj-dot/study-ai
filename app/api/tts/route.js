@@ -1,10 +1,13 @@
 import { NextResponse } from 'next/server';
 import { wavFromPcm } from '@/lib/gemini';
+import { guard, clip } from '@/lib/guard';
 export const maxDuration = 60;
 
 // TTS adapter seam: gemini | elevenlabs | browser (client falls back to speechSynthesis)
 export async function POST(req) {
-  const { text, lang } = await req.json();
+  const bad = guard(req, { perMin: 20, maxBytes: 50_000 }); if (bad) return bad;
+  let body; try { body = await req.json(); } catch { return NextResponse.json({ fallback: 'browser' }); }
+  const text = clip(body.text, 1200);
   const provider = process.env.TTS_PROVIDER || (process.env.GEMINI_API_KEY ? 'gemini' : 'browser');
   try {
     if (provider === 'elevenlabs' && process.env.ELEVENLABS_API_KEY) {
